@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
+import Popup from "reactjs-popup";
 import gsap from "gsap";
 import MoodTrackerContext from "../../context/MoodTrackerContext";
-
+import "reactjs-popup/dist/index.css";
 import "./index.css";
 
 class Header extends Component {
@@ -81,14 +82,41 @@ class Header extends Component {
                       </li>
                     </Link>
                     <li>
-                      <button
-                        type="button"
-                        onClick={this.onLogout}
-                        className="logout-button"
-                        data-testid="logoutButton"
+                      <Popup
+                        modal
+                        trigger={
+                          <button type="button" className="logout-button">
+                            Logout
+                          </button>
+                        }
                       >
-                        Logout
-                      </button>
+                        {(close) => (
+                          <div>
+                            <div>
+                              <p style={{ color: "black", fontSize: "20px" }}>
+                                Confirm Logout
+                              </p>
+                            </div>
+                            <div className="button-container-popup">
+                              <button
+                                type="button"
+                                className="logout-button"
+                                onClick={() => close()}
+                              >
+                                Close
+                              </button>
+                              <button
+                                type="button"
+                                onClick={this.onLogout}
+                                className="logout-button"
+                                data-testid="logoutButton"
+                              >
+                                Logout
+                              </button>
+                            </div>
+                          </div>
+                        )}
+                      </Popup>
                     </li>
                     <li>
                       <button

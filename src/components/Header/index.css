@@ -64,7 +64,16 @@
     display: none;
   }
 }
-
+.button-container-popup {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+.modal {
+  background-color: orange;
+  height: 500px;
+}
 .menu-button {
   background-color: transparent;
   border: 0px solid;
