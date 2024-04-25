@@ -9,7 +9,13 @@
   height: 30px;
   margin-bottom: 5px;
 }
+.light-dates {
+  color: black !important;
+}
 
+.light-arrow-btn {
+  background-color: white;
+}
 .arrow-button {
   background-color: transparent;
   border: 0px solid;

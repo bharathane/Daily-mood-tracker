@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
-
+import gsap from "gsap";
 import MoodTrackerContext from "../../context/MoodTrackerContext";
 
 import "./index.css";
 
 class Header extends Component {
-  state = { isMenu: false };
+  state = { isMenu: false, isDarkTheme: false };
+  componentDidMount() {
+    gsap.to(".dark-theme-button", { rotate: 360, duration: 1 });
+  }
 
   onMenuClick = () => {
     this.setState((prev) => ({ isMenu: !prev.isMenu }));
@@ -22,16 +25,19 @@ class Header extends Component {
 
   render() {
     const { isMenu } = this.state;
+
     const newClassName = isMenu ? "navbar-menu" : "nav-content-lg";
     const newDataTestid = isMenu ? "navbarMenu" : "navContentLg";
+
     return (
       <MoodTrackerContext.Consumer>
         {(value) => {
-          const { onHomeClick, onReportClick } = value;
-
+          const { onHomeClick, onReportClick, setIsDarkTheme, isDarkTheme } =
+            value;
+          const navLightTheme = isDarkTheme ? "nav-light-theme" : "";
           return (
             <>
-              <nav data-testid="navbar" className="navbar">
+              <nav data-testid="navbar" className={`navbar ${navLightTheme}`}>
                 <h1 data-testid="navHeading" className="nav-heading">
                   Daily Mood Tracker
                 </h1>
@@ -55,7 +61,10 @@ class Header extends Component {
                     className="navbar-menu-content"
                   >
                     <Link onClick={onHomeClick} className="link" to="/">
-                      <li data-testid="navLi" className="nav-li">
+                      <li
+                        data-testid="navLi"
+                        className={`nav-li ${isDarkTheme && "nav-li-dark"}`}
+                      >
                         Home
                       </li>
                     </Link>
@@ -64,7 +73,10 @@ class Header extends Component {
                       className="link"
                       to="/reports"
                     >
-                      <li data-testid="navLi2" className="nav-li">
+                      <li
+                        data-testid="navLi2"
+                        className={`nav-li ${isDarkTheme && "nav-li-dark"}`}
+                      >
                         Reports
                       </li>
                     </Link>
@@ -76,6 +88,24 @@ class Header extends Component {
                         data-testid="logoutButton"
                       >
                         Logout
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        className="dark-theme-button"
+                        onClick={() => {
+                          setIsDarkTheme();
+                        }}
+                      >
+                        <img
+                          src={
+                            isDarkTheme
+                              ? "https://assets.ccbp.in/frontend/react-js/dark-theme-img.png"
+                              : "https://assets.ccbp.in/frontend/react-js/light-theme-img.png"
+                          }
+                          alt="light-theme"
+                        />
                       </button>
                     </li>
                   </ul>

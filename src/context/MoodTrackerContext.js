@@ -3,6 +3,8 @@ import React from "react";
 const MoodTrackerContext = React.createContext({
   homeActive: "",
   reportActive: "",
+  isDarkTheme: false,
+  setIsDarkTheme: () => {},
   onHomeClick: () => {},
   onReportClick: () => {},
   calenderList: [],

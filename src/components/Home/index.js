@@ -1,15 +1,34 @@
 import { Component } from "react";
 import MoodTrackerContext from "../../context/MoodTrackerContext";
 import Header from "../Header";
+import gsap from "gsap";
 import Calender from "../Calender";
 import "./index.css";
 
 class Home extends Component {
+  componentDidMount() {
+    gsap.fromTo(
+      ".calender-container1",
+      {
+        opacity: 0,
+        duration: 3,
+      },
+      { opacity: 1 }
+    );
+    gsap.fromTo(".emojis-list-container", { y: -300, x: 100 }, { y: 0, x: 0 });
+    gsap.fromTo(".select-container", { y: 300, x: 100 }, { y: 0, x: 0 });
+    gsap.fromTo(
+      ".home-main-heading",
+      { opacity: 0, duration: 4 },
+      { opacity: 1, duration: 2 }
+    );
+  }
   render() {
     return (
       <MoodTrackerContext.Consumer>
         {(value) => {
           const {
+            isDarkTheme,
             emojisListNew,
             nameDayCount,
             activeEmoji,
@@ -21,13 +40,13 @@ class Home extends Component {
             onEmojiNameChange,
             onDayChange,
           } = value;
-
+          const darkBgHome = isDarkTheme ? "dark-bg-home" : "";
           return (
             <>
               <Header />
               <div
                 data-testid="homeBodyContainer"
-                className="home-body-container"
+                className={`home-body-container ${darkBgHome}`}
               >
                 <h1 data-testid="homeMainHeading" className="home-main-heading">
                   Moods in a Month
@@ -73,7 +92,9 @@ class Home extends Component {
                               >
                                 <p
                                   data-testid="emojiPara"
-                                  className={`emoji-para ${activeEmojiPara}`}
+                                  className={`emoji-para ${activeEmojiPara} ${
+                                    isDarkTheme ? "light-dates" : ""
+                                  }`}
                                 >
                                   {emojiName}
                                 </p>
@@ -121,7 +142,12 @@ class Home extends Component {
                           </option>
                         ))}
                       </select>
-                      <h1 data-testid="nameDayCount" className="name-day-count">
+                      <h1
+                        data-testid="nameDayCount"
+                        className={`name-day-count ${
+                          isDarkTheme ? "light-dates" : ""
+                        }`}
+                      >
                         {nameDayCount}
                       </h1>
                     </div>

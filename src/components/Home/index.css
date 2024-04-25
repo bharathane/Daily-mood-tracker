@@ -1,5 +1,5 @@
 .home-body-container {
-  background-image: url("https://assets.ccbp.in/frontend/react-js/nxt-slides/monthly-emojis-bg.png");
+  background-color: black;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -8,9 +8,13 @@
   align-items: center;
   background-position: center;
 }
+
 .home-all-container {
   display: flex;
   flex-direction: column;
+}
+.dark-bg-home {
+  background-color: white !important;
 }
 .home-main-heading {
   display: none;
@@ -38,6 +42,9 @@
     flex-direction: column;
     width: 40%;
   }
+}
+.light-dates {
+  color: black;
 }
 
 .emojis-list-container {
@@ -77,6 +84,7 @@
   padding-left: 0px;
   margin: 0px;
 }
+
 .emoji-li {
   display: flex;
   flex-direction: column;

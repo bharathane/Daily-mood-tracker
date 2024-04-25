@@ -7,6 +7,11 @@
   justify-content: space-between;
 }
 
+.nav-light-theme {
+  background-color: white;
+  border-bottom: 1px solid rgb(214, 205, 205);
+}
+
 .link {
   text-decoration: none;
 }
@@ -39,6 +44,16 @@
 .nav-content-lg {
   display: none;
 }
+.dark-theme-button {
+  background: none;
+  outline: none;
+  border: none;
+}
+.dark-theme-button img {
+  width: 2.5vw;
+  margin-bottom: 7px;
+}
+
 @media screen and (min-width: 768px) {
   .nav-content-lg {
     display: flex;
@@ -89,6 +104,9 @@
   font-weight: 500;
   color: #ffffff;
   margin-bottom: 10px;
+}
+.nav-li-dark {
+  color: black;
 }
 .logout-button {
   width: 100%;

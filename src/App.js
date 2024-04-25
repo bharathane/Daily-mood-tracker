@@ -2356,6 +2356,7 @@ const emojisList = [
 // #endregion
 class App extends Component {
   state = {
+    isDarkTheme: false,
     homeActive: true,
     reportActive: false,
     calenderList: initialMonthsList,
@@ -2635,6 +2636,9 @@ class App extends Component {
       homeActive: false,
     });
   };
+  setIsDarkTheme = () => {
+    this.setState((prevState) => ({ isDarkTheme: !prevState.isDarkTheme }));
+  };
 
   render() {
     const {
@@ -2647,6 +2651,7 @@ class App extends Component {
       activeEmojiName,
       month,
       emojisListNew,
+      isDarkTheme,
       calenderReportList,
       reportCalenderMonth,
     } = this.state;
@@ -2655,6 +2660,7 @@ class App extends Component {
         value={{
           homeActive,
           reportActive,
+          isDarkTheme,
           onHomeClick: this.onHomeClick,
           onReportClick: this.onReportClick,
           onChangeCalenderList: this.onDateLiClick,
@@ -2669,6 +2675,7 @@ class App extends Component {
           onEmojiClick: this.onEmojiClick,
           onEmojiNameChange: this.onEmojiNameChange,
           onDayChange: this.onDayChange,
+          setIsDarkTheme: this.setIsDarkTheme,
           getNameDayCount: this.getNameDayCount,
           onChangeMonth: this.onChangeMonth,
           onLeftArrowClick: this.onLeftArrowClick,

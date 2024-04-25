@@ -1,4 +1,5 @@
 import { Component } from "react";
+import gsap from "gsap";
 
 import {
   MdOutlineKeyboardArrowLeft,
@@ -8,11 +9,16 @@ import "./index.css";
 import MoodTrackerContext from "../../context/MoodTrackerContext";
 
 class Calender extends Component {
+  componentDidMount() {
+    gsap.fromTo("#calenderID", { x: -500, duration: 2 }, { x: 0 });
+  }
+
   render() {
     return (
       <MoodTrackerContext.Consumer>
         {(value) => {
           const {
+            isDarkTheme,
             calenderList,
             onChangeCalenderList,
             onRightArrowClick,
@@ -22,19 +28,24 @@ class Calender extends Component {
           } = value;
 
           return (
-            <>
+            <div id="calenderID">
               <div data-testid="arrowContainer" className="arrow-container">
                 <button
                   type="button"
                   onClick={onLeftArrowClick}
-                  className="arrow-button"
+                  className={`arrow-button ${
+                    isDarkTheme ? "light-arrow-btn" : ""
+                  }`}
                   aria-label="Previous"
                   data-testid="previous-button"
                 >
                   <MdOutlineKeyboardArrowLeft className="arrow-icon" />
                 </button>
 
-                <h1 data-testid="monthPara" className="month-para">
+                <h1
+                  data-testid="monthPara"
+                  className={`month-para ${isDarkTheme ? "light-dates" : ""}`}
+                >
                   {calenderList[month - 1].monthName}
                 </h1>
 
@@ -54,7 +65,9 @@ class Calender extends Component {
                     <li data-testid="daysLi" key={item.id} className="days-li">
                       <p
                         data-testid="dayCalenderPara"
-                        className="day-calender-Para"
+                        className={`day-calender-Para ${
+                          isDarkTheme ? "light-dates" : ""
+                        }`}
                       >
                         {item.day}
                       </p>
@@ -75,7 +88,12 @@ class Calender extends Component {
                           className="dates-li-button"
                           data-testid="datesLiButton"
                         >
-                          <p data-testid="datesPara" className="dates-para">
+                          <p
+                            data-testid="datesPara"
+                            className={`dates-para ${
+                              isDarkTheme ? "light-dates" : ""
+                            }`}
+                          >
                             {date}
                           </p>
 
@@ -93,7 +111,7 @@ class Calender extends Component {
                   })}
                 </ul>
               </div>
-            </>
+            </div>
           );
         }}
       </MoodTrackerContext.Consumer>
