@@ -2371,6 +2371,7 @@ class App extends Component {
   };
 
   componentDidMount = () => {
+    document.title = "Daily Mood Tracker";
     this.getNameDayCount();
     this.createEmojisList();
     this.getCalenderReport();
