@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# ![WebApp](https://res.cloudinary.com/dr2jqbir9/image/upload/v1713778518/datepicker_sfpz8a.png)
+# Daily Mood Tracker
+<table>
+<tr>
+<td>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Elevate your self-awareness with our daily mood tracker, a feature-rich tool that goes beyond just logging your emotions. With seamless login capabilities, personalized accounts ensure your data is secure and accessible whenever you need it. Add a touch of personality to each entry by selecting from a wide array of expressive emojis, customizing your mood tracking experience to fit your unique style. Our calendar not only allows you to log in and out effortlessly but also enables you to add emojis to specific dates, providing a visual representation of your mood journey over time. What's more, our insightful reporting feature breaks down your mood data by day and emoji type, offering valuable insights into your emotional patterns. And with our intuitive graphing tool, visualize your mood trends with clarity, empowering you to make informed decisions and cultivate a greater sense of emotional well-being. Start your journey towards a more balanced and fulfilling life today with our comprehensive daily mood tracker.
+</td>
+</tr>
+</table>
 
-## Available Scripts
 
-In the project directory, you can run:
+## Demo
+Here is a working live demo :  https://daily-mood-tracker.vercel.app/
 
-### `npm start`
+## sample user credentials
+1) username: rahul
+2) password: rahul@2021
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## [Usage](https://daily-mood-tracker.vercel.app/) 
 
-### `npm run build`
+### Development
+Want to contribute? Great!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To fix a bug or enhance an existing module, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Fork the repo
+- Create a new branch (`git checkout -b improve-feature`)
+- Make the appropriate changes in the files
+- Add changes to reflect the changes made
+- Commit your changes (`git commit -am 'Improve feature'`)
+- Push to the branch (`git push origin improve-feature`)
+- Create a Pull Request 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Built with 
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [React Js](https://www.w3schools.com/REACT/DEFAULT.ASP) - React is a Popular JavaSript library used for build SinglePage applications.
+- [CSS](https://www.w3schools.com/css/) - CSS used for styling and responsiveness
+- [react-router-dom](https://www.w3schools.com/react/react_router.asp) -used for page navigations.
+- [react-context-api](https://react.dev/reference/react/createContext) - used for to create a global state
+- and many MORE...
